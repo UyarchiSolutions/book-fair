@@ -15516,7 +15516,7 @@ const get_shorts_all = async (req) => {
         secondarycommunication: 1,
         broucher: 1,
         streamCurrent_Watching: 1,
-        shortsLink:1
+        shortsLink: 1
       },
     },
     { $skip: 5 * page },

@@ -103,6 +103,12 @@ const UsageAppIDschema = mongoose.Schema({
     },
     streamType: {
         type: String,
+    },
+    type: {
+        type: String,
+    },
+    demain: {
+        type: String,
     }
 });
 
