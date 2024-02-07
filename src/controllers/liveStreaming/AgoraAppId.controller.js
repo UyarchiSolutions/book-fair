@@ -89,6 +89,11 @@ const get_app_id_details = catchAsync(async (req, res) => {
 });
 
 
+const get_app_id = catchAsync(async (req, res) => {
+  const data = await AgoraAppId.get_app_id(req);
+  res.status(httpStatus.CREATED).send(data)
+});
+
 
 
 module.exports = {
@@ -108,7 +113,8 @@ module.exports = {
   update_check_appid_working,
   update_check_appid_faild,
   get_all_token_my,
-  get_app_id_details
+  get_app_id_details,
+  get_app_id
 };
 
 

@@ -530,6 +530,16 @@ const get_app_id_details = async (req) => {
 
   // return 
 }
+
+const get_app_id = async (req) => {
+
+
+  const query = await axios.post(`localhost:3000/v2/agora/get/app/id/assign`, req.body);
+
+  console.log(query)
+
+  return query;
+}
 module.exports = {
   InsertAppId,
   InsertAget_app_id,
@@ -547,5 +557,6 @@ module.exports = {
   get_all_token_check,
   update_check_appid,
   get_all_token_my,
-  get_app_id_details
+  get_app_id_details,
+  get_app_id
 };
