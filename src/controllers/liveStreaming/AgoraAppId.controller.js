@@ -90,7 +90,7 @@ const get_app_id_details = catchAsync(async (req, res) => {
 
 
 const get_app_id = catchAsync(async (req, res) => {
-  const data = await AgoraAppId.get_app_id(req);
+  const data = await AgoraAppId.get_app_id(req.body);
   res.status(httpStatus.CREATED).send(data)
 });
 
