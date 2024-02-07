@@ -534,7 +534,7 @@ const get_app_id_details = async (req) => {
 const get_app_id = async (req) => {
 
 
-  const query = await axios.post(`localhost:3000/v2/agora/get/app/id/assign`, req.body);
+  const query = await axios.post(`https://seewe.co/v2/agora/get/app/id/assign`, req.body);
 
   console.log(query)
 
