@@ -2533,7 +2533,7 @@ const end_stream = async (req) => {
     .findOne({ chennel: req.query.id, type: 'CloudRecording', recoredStart: { $eq: 'query' } })
     .sort({ created: -1 });
   if (token != null) {
-    let agoraToken = await AgoraAppId.findById(value.agoraID);
+    let agoraToken = await StreamAppID.findById(value.agoraID);
     console.log(agoraToken, 23142);
     const Authorization = `Basic ${Buffer.from(agoraToken.Authorization.replace(/\s/g, '')).toString('base64')}`;
     const resource = token.resourceId;
@@ -3676,7 +3676,7 @@ const go_live_stream_host_details = async (req, userId) => {
     },
     {
       $lookup: {
-        from: 'agoraappids',
+        from: 'streamappids',
         localField: 'agoraID',
         foreignField: '_id',
         as: 'agoraappids',
@@ -4025,7 +4025,7 @@ const go_live_stream_host = async (req, userId) => {
     },
     {
       $lookup: {
-        from: 'agoraappids',
+        from: 'streamappids',
         localField: 'agoraID',
         foreignField: '_id',
         as: 'agoraappids',
