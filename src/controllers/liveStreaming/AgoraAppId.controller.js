@@ -83,16 +83,16 @@ const update_check_appid_faild = catchAsync(async (req, res) => {
 });
 
 
-const get_app_id_details = catchAsync(async (req, res) => {
-  const data = await AgoraAppId.get_app_id_details(req);
-  res.status(httpStatus.CREATED).send(data);
-});
+// const get_app_id_details = catchAsync(async (req, res) => {
+//   const data = await AgoraAppId.get_app_id_details(req);
+//   res.status(httpStatus.CREATED).send(data);
+// });
 
 
-const get_app_id = catchAsync(async (req, res) => {
-  const data = await AgoraAppId.get_app_id(req.body);
-  res.status(httpStatus.CREATED).send(data)
-});
+// const get_app_id = catchAsync(async (req, res) => {
+//   const data = await AgoraAppId.get_app_id(req.body);
+//   res.status(httpStatus.CREATED).send(data)
+// });
 
 
 

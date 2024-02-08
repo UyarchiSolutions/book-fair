@@ -33,8 +33,8 @@ router.route('/check/appid/reject').put(authorization, AgoraAppId.update_check_a
 
 
 
-router.route('/get/app/id/assign').post(AgoraAppId.get_app_id_details);
-router.route('/get/app/id/axois').post(AgoraAppId.get_app_id);
+// router.route('/get/app/id/assign').post(AgoraAppId.get_app_id_details);
+// router.route('/get/app/id/axois').post(AgoraAppId.get_app_id);
 
 
 
