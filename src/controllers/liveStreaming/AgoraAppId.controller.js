@@ -113,8 +113,8 @@ module.exports = {
   update_check_appid_working,
   update_check_appid_faild,
   get_all_token_my,
-  get_app_id_details,
-  get_app_id
+  // get_app_id_details,
+  // get_app_id
 };
 
 
