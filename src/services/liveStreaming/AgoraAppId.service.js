@@ -569,6 +569,6 @@ module.exports = {
   get_all_token_check,
   update_check_appid,
   get_all_token_my,
-  get_app_id_details,
+  // get_app_id_details,
   get_app_id
 };
