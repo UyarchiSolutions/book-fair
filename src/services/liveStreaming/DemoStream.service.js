@@ -681,7 +681,7 @@ const send_livestream_link = async (req) => {
     dateISO: moment(),
     phoneNumber: phoneNumber,
     name: name,
-    streamName: type == 'demo' ? 'Demo Stream - ' + (parseInt(streamCount) + 1) : 'Agriexpo2024-Meet',
+    streamName: type == 'demo' ? 'Demo Stream - ' + (parseInt(streamCount) + 1) : 'Entrepreneurship-Meet',
     createdBy: userID,
     _id: id,
     transaction: transaction,
@@ -1932,7 +1932,7 @@ const go_live = async (req) => {
   let expirationTimestamp;
   if (demostream.agoraID == null) {
     let agoraID = await agoraToken.token_assign(6000, demostream._id, 'demo');
-    expirationTimestamp = moment().add(30, 'minutes') / 1000;
+    expirationTimestamp = moment().add(45, 'minutes') / 1000;
     if (demostream.type == 'demo') {
       agoraID = await agoraToken.token_assign(105, demostream._id, 'demo');
       expirationTimestamp = moment().add(15, 'minutes') / 1000;
