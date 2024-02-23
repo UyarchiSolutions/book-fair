@@ -533,7 +533,7 @@ const get_app_id_details = async (req) => {
 const get_app_id = async (data) => {
 
 
-  const query = await axios.post(`https://seewe.online/v2/agora/get/app/id/assign`, data);
+  const query = await axios.post(`https://seewe.co/v2/agora/get/app/id/assign`, data);
 
   let create_app = await StreamAppID.create(
     {
