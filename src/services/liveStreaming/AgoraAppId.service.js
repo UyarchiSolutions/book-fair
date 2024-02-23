@@ -510,31 +510,30 @@ const update_check_appid = async (req, data) => {
 };
 
 
-// const get_app_id_details = async (req) => {
+const get_app_id_details = async (req) => {
 
-//   let { demain, type, minutes, streamId, streamType } = req.body;
+  let { demain, type, minutes, streamId, streamType } = req.body;
 
-//   if (minutes > 9500) {
-//     throw new ApiError(httpStatus.NOT_FOUND, 'Minutes TOO Large');
-//   }
+  if (minutes > 9500) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Minutes TOO Large');
+  }
 
-//   let agora = await token_assign(minutes, streamId, streamType);
+  let agora = await token_assign(minutes, streamId, streamType);
 
-//   if (!agora) {
-//     throw new ApiError(httpStatus.NOT_FOUND, 'Agora Token not found');
-//   }
+  if (!agora) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Agora Token not found');
+  }
 
-//   let vals = await UsageAppID.findByIdAndUpdate({ _id: agora.vals._id }, { type: type, demain: demain }, { new: true });
+  let vals = await UsageAppID.findByIdAndUpdate({ _id: agora.vals._id }, { type: type, demain: demain }, { new: true });
 
-//   return agora.element;
+  return agora.element;
 
-//   // return 
-// }
+}
 
 const get_app_id = async (data) => {
 
 
-  const query = await axios.post(`https://agriexpo.click/v2/agora/get/app/id/assign`, data);
+  const query = await axios.post(`https://seewe.online/v2/agora/get/app/id/assign`, data);
 
   let create_app = await StreamAppID.create(
     {
@@ -569,6 +568,6 @@ module.exports = {
   get_all_token_check,
   update_check_appid,
   get_all_token_my,
-  // get_app_id_details,
+  get_app_id_details,
   get_app_id
 };
