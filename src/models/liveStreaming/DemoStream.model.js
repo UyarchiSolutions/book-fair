@@ -139,6 +139,12 @@ const demostreamchema = mongoose.Schema({
   condidate_join: {
     type: Boolean,
     default: false
+  },
+  duration: {
+    type: Number,
+  },
+  participants: {
+    type: Number,
   }
 });
 

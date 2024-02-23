@@ -1932,14 +1932,19 @@ const go_live = async (req) => {
   let expirationTimestamp;
   if (demostream.agoraID == null) {
     let agoraID = await agoraToken.token_assign(6000, demostream._id, 'demo');
+    demostream.duration = 45;
+    demostream.participants = 150;
     expirationTimestamp = moment().add(45, 'minutes') / 1000;
     if (demostream.type == 'demo') {
       agoraID = await agoraToken.token_assign(105, demostream._id, 'demo');
       expirationTimestamp = moment().add(15, 'minutes') / 1000;
+      demostream.duration = 15;
+      demostream.participants = 5;
     }
     if (demostream.type == 'assessment') {
       agoraID = await agoraToken.token_assign(330, demostream._id, 'demo');
       expirationTimestamp = moment().add(30, 'minutes') / 1000;
+      demostream.duration = 30;
     }
 
     if (agoraID) {
