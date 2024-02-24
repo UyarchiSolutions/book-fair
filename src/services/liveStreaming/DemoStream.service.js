@@ -238,7 +238,7 @@ const send_request_link = async (req) => {
   });
   if (demorequest.type == 'demo') {
     valitity = jwt.sign(payload, secret, {
-      expiresIn: '30m', // Set token expiration to 30 minutes
+      expiresIn: '2d', // Set token expiration to 30 minutes
     });
   }
   demostream.streamValitity = valitity;
@@ -698,7 +698,7 @@ const send_livestream_link = async (req) => {
   });
   if (type == 'demo') {
     valitity = jwt.sign(payload, secret, {
-      expiresIn: '30m',
+      expiresIn: '10d',
     });
   }
   demostream.streamValitity = valitity;
