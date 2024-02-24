@@ -1349,7 +1349,7 @@ const join_stream_buyer = async (req) => {
 
   let register = await DemostreamToken.find({ streamID: demotoken.streamID, status: 'resgistered' }).count();
   if (stream.type == 'demo') {
-    if (register < 5) {
+    if (register < 150) {
       demotoken.golive = true;
       if (stream.status == 'Pending') {
         stream.status = 'Ready';
@@ -1936,10 +1936,10 @@ const go_live = async (req) => {
     demostream.participants = 150;
     expirationTimestamp = moment().add(45, 'minutes') / 1000;
     if (demostream.type == 'demo') {
-      agoraID = await agoraToken.token_assign(105, demostream._id, 'demo');
-      expirationTimestamp = moment().add(15, 'minutes') / 1000;
-      demostream.duration = 15;
-      demostream.participants = 5;
+      agoraID = await agoraToken.token_assign(6000, demostream._id, 'demo');
+      expirationTimestamp = moment().add(45, 'minutes') / 1000;
+      demostream.duration = 45;
+      demostream.participants = 150;
     }
     if (demostream.type == 'assessment') {
       agoraID = await agoraToken.token_assign(330, demostream._id, 'demo');
