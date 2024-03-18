@@ -22,7 +22,7 @@ const {
 } = require('../../models/ecomplan.model');
 const { request } = require('express');
 
-const { AgoraAppId, UsageAppID,StreamAppID } = require('../../models/liveStreaming/AgoraAppId.model');
+const { AgoraAppId, UsageAppID, StreamAppID } = require('../../models/liveStreaming/AgoraAppId.model');
 
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
@@ -366,6 +366,7 @@ const recording_start = async (req, id) => {
     return { message: 'Already Started' };
   }
 };
+
 const recording_query = async (req, id, agoraToken) => {
   const Authorization = `Basic ${Buffer.from(agoraToken.Authorization.replace(/\s/g, '')).toString(
     'base64'
