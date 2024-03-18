@@ -1201,9 +1201,9 @@ const join_stream_candidate = async (req) => {
     throw new ApiError(httpStatus.NOT_FOUND, 'Stream not found');
   }
 
-  if (stream.candidate != phoneNumber) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'You are Not a Valid User');
-  }
+  // if (stream.candidate != phoneNumber) {
+  //   throw new ApiError(httpStatus.NOT_FOUND, 'You are Not a Valid User');
+  // }
 
   // if (stream.condidate_join == true) {
   //   throw new ApiError(httpStatus.NOT_FOUND, 'This Number has already logged In');
