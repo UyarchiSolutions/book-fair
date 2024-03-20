@@ -892,7 +892,7 @@ const send_livestream_link_assessment = async (req) => {
     createdBy: userID,
     _id: id,
     transaction: transaction,
-    tokenExp: type == moment().add(1, 'days'),
+    tokenExp: type == moment().add(10, 'days'),
     type: type,
     candidate: req.body.candidate,
   });
